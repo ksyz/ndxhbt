@@ -184,9 +184,10 @@ class Statistics
 	
 		// this should probably be updated...
 		// add AppleWebkit
+		// No. Use GA.
 		$browsers = array(
-			array('Netscape', 'Mozilla/4', 'Mozilla/([[:digit:]\.]+)'),
-			array('Mozilla', 'Mozilla/5', 'rv(:| )([[:digit:]\.]+)'),
+			array('Netscape', 'Mozilla\/4', 'Mozilla/([[:digit:]\.]+)'),
+			array('Mozilla', 'Mozilla\/5', 'rv(:| )([[:digit:]\.]+)'),
 			array('Safari', 'Safari', 'Safari/([[:digit:]\.]+)'),
 			array('Firefox', 'Firefox', 'Firefox/([[:digit:]\.]+)'),
 			array('Netscape', 'Netscape', 'Netscape[0-9]?/([[:digit:]\.]+)'),
@@ -199,7 +200,6 @@ class Statistics
 			);
 	
 		foreach ($browsers as $test) {
-		
 			if (preg_match('/'.$test[1].'/', $ua)) 
 			{
 				$browser['browser'] = $test[0];

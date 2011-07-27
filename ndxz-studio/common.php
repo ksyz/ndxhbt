@@ -70,7 +70,7 @@ function &load_class($class, $instantiate = TRUE, $type, $internal = FALSE)
 	
 			if ($instantiate == TRUE)
 			{
-				$objects[$class] =& new $class();
+				$objects[$class] = new $class();
 			}
 			else
 			{
@@ -90,7 +90,7 @@ function &load_class($class, $instantiate = TRUE, $type, $internal = FALSE)
 
 			if ($instantiate == TRUE)
 			{
-				$objects[$class] =& new $class();
+				$objects[$class] = new $class();
 			}
 			else
 			{

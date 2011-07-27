@@ -50,8 +50,8 @@
 		else // it's 5
 		{
 			// address this later
-			//$isam = 'ENGINE=MyISAM DEFAULT CHARSET=utf8';
-			$isam = 'TYPE=MyISAM';
+			// no, now. and use UTF-8 ... are you from past?
+			$isam = 'ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE = utf8_general_ci';
 		}
 		
 		$sql = array();

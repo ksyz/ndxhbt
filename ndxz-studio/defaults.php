@@ -13,7 +13,16 @@ $default['ignore_ip'] = array();
 //////////// you won't normally need to edit anything below this line ////////////
 
 // darn quotes
-set_magic_quotes_runtime(0);
+#set_magic_quotes_runtime(0);
+// Yep, another PHP 5.0 workaround
+ini_set("magic_quotes_runtime", 0);
+
+// FIX: PHP >5.1 requires valid timezone
+// So we will just play nice and set this default to UTC. Change to your need 
+// or set system-wide in php.ini
+if (!ini_get('date.timezone')) {
+	date_default_timezone_set('UTC');
+}
 
 // database prefix
 define('PX', 'ndxz_');

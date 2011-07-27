@@ -47,11 +47,11 @@ class Router extends Core
 		
 		$modules = array();
 
-		if ($fp = @opendir('module')) 
+		if ($fp = opendir('module')) 
 		{
 			while (($module = readdir($fp)) !== false)
 			{
-				if ((!eregi("^_",$module)) && (!eregi("^CVS$",$module)) && (!eregi(".php$",$module)) && (!eregi(".html$",$module)) && (!eregi(".DS_Store",$module)) && (!eregi("\.",$module)))
+				if (!preg_match('/^\.php$|\.html$|css|js|^_|css|plugin|img|\.|\.DS_Store/', $module))
 				{      
 					$modules[] = $module;
 				}

@@ -129,7 +129,7 @@ function getThemes($path, $default)
 		{
 			while (($module = readdir($fp)) !== false) 
 			{
-				if ((!eregi("^_", $module)) && (!eregi("^CVS$", $module)) && (!eregi(".php$", $module)) && (!eregi(".html$", $module)) && (!eregi(".DS_Store", $module)) && (!eregi("\.", $module)) && (!eregi("plugin", $module)) && (!eregi("css", $module)) && (!eregi("js", $module)) && (!eregi("img", $module)))
+				if (!preg_match('/^\.php$|\.html$|css|js|^_|css|plugin|img|\.|\.DS_Store/', $module))
 				{      
 					$modules[] = $module;
 				}
@@ -167,7 +167,7 @@ function getPresent($path, $default)
 			{
 				while (($module = readdir($fp)) !== false) 
 				{
-					if (eregi("^exhibit", $module))
+					if (preg_match('/^exhibit/', $module))
 					{
 						$modules[] = $module;
 					}

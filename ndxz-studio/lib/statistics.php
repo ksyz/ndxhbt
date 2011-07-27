@@ -58,7 +58,7 @@ class Statistics
 		$stat['url']		= parse_url($stat['ref']);
 		
 		$stat['domain']		= (isset($stat['url']['host'])) ?
-			eregi_replace("^www.", "", $stat['url']['host']) :
+			preg_replace("/^www./i", "", $stat['url']['host']) :
 			'';
 		
 		$stat['uri']		= $_SERVER['REQUEST_URI'];
@@ -179,7 +179,7 @@ class Statistics
 	
 		foreach ($platforms as $key => $test) 
 		{		
-			if (eregi($test, $ua)) $browser['platform'] = $key;
+			if (preg_match("/$test/", $ua)) $browser['platform'] = $key;
 		}
 	
 		// this should probably be updated...
@@ -200,7 +200,7 @@ class Statistics
 	
 		foreach ($browsers as $test) {
 		
-			if (eregi($test[1], $ua)) 
+			if (preg_match('/'.$test[1].'/', $ua)) 
 			{
 				$browser['browser'] = $test[0];
 			}

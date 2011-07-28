@@ -4,10 +4,10 @@
 //error_reporting(E_ALL);
 
 // the basics
-if (file_exists('ndxz-studio/config/config.php')) require_once 'ndxz-studio/config/config.php';
+if (file_exists('ndxhbt/config/config.php')) require_once 'ndxhbt/config/config.php';
 
-require_once 'ndxz-studio/defaults.php';
-require_once 'ndxz-studio/common.php';
+require_once 'ndxhbt/defaults.php';
+require_once 'ndxhbt/common.php';
 
 // make sure we have our connection array
 shutDownCheck();

@@ -1,5 +1,5 @@
-For original readme.txt open ndxz-studio/readme.txt.
-Copying under the terms of originaly attached GPLv2+ in ndxz-studio/license.txt.
+For original readme.txt open ndxhbt/readme.txt.
+Copying under the terms of originaly attached GPLv2+ in ndxhbt/license.txt.
 
 * SELinux
 
@@ -8,9 +8,9 @@ webserver in permissive, right?). Now go and fix context type for those dirs.
 Use semanage(8) fcontext to make it permanent across relabels. 
 
 $ chcon -R -t httpd_sys_rw_content_t files/
-$ chcon -R -t httpd_sys_rw_content_t ndxz-studio/config/
+$ chcon -R -t httpd_sys_rw_content_t ndxhbt/config/
 
 * Database Charset
 
-Go to ndxz-studio/install.php and search for $isam variable. Set charset and collate 
+Go to ndxhbt/install.php and search for $isam variable. Set charset and collate 
 to something meaningful, or just leave it at utf8.

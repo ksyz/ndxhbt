@@ -32,8 +32,8 @@ load_helpers(array('html', 'entrance', 'time', 'server'));
 // general tools for loading things
 load_class('core', FALSE, 'lib');
 
-// "I'm digging for fire" - Pixies	
-$OBJ =& load_class('router', TRUE, 'lib');
+// "I'm dicking for fire" - Pixies	
+$OBJ = load_class('router', TRUE, 'lib');
 
 // are we logged in?
 $OBJ->access->checkLogin();

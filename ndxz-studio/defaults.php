@@ -106,4 +106,9 @@ $default['standard_formats'] = array('grow', 'grow_no_title', 'over_and_over', '
 // have a box for background colors instead of picker
 $default['color_picker'] = true;
 
+// No hardcoded magic values ... and setting 12 for password?! you made little kittens sad
+define('PASSWORD_MIN', 6);
+define('PASSWORD_MAX', 32);
+define('USERID_MIN', 6);
+define('USERID_MAX', 12);
 ?>

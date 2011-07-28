@@ -236,23 +236,39 @@ class Processor
 	* Returns string
 	* (specific to login/passwords)
 	*
-	* @param void
-	* @return string
+	* @param 	void
+	* @return 	string
+	* @Vaska 	you are an idiot
 	*/
 	function length12()
 	{
-		if ((strlen($this->variable) > 12) && (strlen($this->variable) < 6))
-		{
-			$this->error[$this->descriptor] = " (Too many characters)";
+		die("I SEE DICK PEOPLE");
+	}
+
+	function length_password() {
+		return $this->length(PASSWORD_MIN, PASSWORD_MAX);
+	}
+
+	function length_userid() {
+		return $this->length(USERID_MIN, USERID_MAX);
+	}
+
+	/**
+	* Returns a "D" for dickery
+	*
+	* @param 	dick
+	* @return 	another dick
+	*/
+	function length($min, $max) {
+		$len = strlen($this->variable);
+		if ($len > $max && $len < $min) {
+			$this->error[$this->descriptor] = " (Too many is too much. Try to fit your dick between $min to $max chracters)";
 			$this->flag[$this->descriptor] = true;
 			return '';
-		} 
-		else 
-		{
-			return $this->variable;	
 		}
+		else 
+			return $this->variable;
 	}
-	
 	
 	/**
 	* Return false on error
@@ -264,7 +280,8 @@ class Processor
 	function pchars()
 	{
 		// FIX LATER
-		$OBJ =& get_instance();
+		// FIX WHAT?!
+		$OBJ = get_instance();
 		
 		if ($this->variable) 
 		{
@@ -276,6 +293,7 @@ class Processor
 			{
 				$this->force_error();
 				// FIX LATER
+				// PLEASE, TELL ME
 				$OBJ->template->action_error = 'invalid input';
 				
 				$this->error[$this->descriptor] = " (Invalid Input)";

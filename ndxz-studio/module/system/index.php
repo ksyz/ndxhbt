@@ -41,9 +41,9 @@ class System extends Router
 		$body = "<div class='c3 bg-grey'>\n";
 		$body .= "<div class='col'>\n";
 		
-		$body .= ips($this->lang->word('login'), 'input', 'userid', $rs['userid'], "maxlength='12'", 'text', $this->lang->word('required').' '.$this->lang->word('number chars'), 'req');
-		$body .= ips($this->lang->word('change password'), 'input', 'password', NULL, "maxlength='12'", 'password', $this->lang->word('required').' '.$this->lang->word('number chars'), 'req');
-		$body .= ips($this->lang->word('confirm password'), 'input', 'cpassword', NULL, "maxlength='12'", 'password', $this->lang->word('if change'),'req');
+		$body .= ips($this->lang->word('login'), 'input', 'userid', $rs['userid'], "maxlength='".USERID_MAX."'", 'text', $this->lang->word('required').' '.$this->lang->word('number chars'), 'req');
+		$body .= ips($this->lang->word('change password'), 'input', 'password', NULL, "maxlength='".PASSWORD_MAX."'", 'password', $this->lang->word('required').' '.$this->lang->word('number chars'), 'req');
+		$body .= ips($this->lang->word('confirm password'), 'input', 'cpassword', NULL, "maxlength='".PASSWORD_MAX."'", 'password', $this->lang->word('if change'),'req');
 		$body .= ips($this->lang->word('time now'), 'getTimeOffset', 'user_offset', $rs['user_offset']);
 		$body .= ips($this->lang->word('time format'), 'getTimeFormat', 'user_format', $rs['user_format']);
 		$body .= ips($this->lang->word('your language'), 'getLanguage', 'user_lang', $rs['user_lang'], NULL, 'text');
@@ -272,16 +272,20 @@ class System extends Router
 	function sbmt_upd_user()
 	{
 		global $go;
-		$processor =& load_class('processor', TRUE, 'lib');
+		$processor = load_class('processor', TRUE, 'lib');
 
 		$clean['user_offset'] = $processor->process('user_offset', array('digit'));
 		$clean['user_format'] = $processor->process('user_format', array('notags'));
 		$clean['user_lang'] = $processor->process('user_lang', array('notags'));
 		
 		// we need to validate userid and password for non latin-1 chars too
-		$clean['userid'] = $processor->process('userid',array('pchars', 'length12','notags', 'reqNotEmpty'));
-		$check['password'] = $processor->process('password',array('pchars', 'length12', 'notags'));
-		$check['cpassword'] = $processor->process('cpassword',array('pchars', 'length12', 'notags'));
+		// WAT?! U MAD?!
+		$clean['userid'] = $processor->process('userid',array('pchars', 'length_userid','notags', 'reqNotEmpty'));
+		// We want only to check password length. It's up to user, whatever they like in 
+		// passwords. Just enforce minimal length, because not only programmers are idiots.
+		// So I removed all dick filters.
+		$check['password'] = $processor->process('password',array('length_password'));
+		$check['cpassword'] = $processor->process('cpassword',array('length_password'));
 		
 		// need to check for change in password...
 		if ($check['password'] != '')

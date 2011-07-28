@@ -20,7 +20,8 @@ function directions()
 // simple validation, returns a default if it's not right
 function check_chars($default, $str='', $arr, $length) 
 {
-	$password 	= "/^[a-zA-Z0-9]+$/"; // login and password
+	$userid 	= '/^[a-zA-Z0-9]{'.USERID_MIN.','.PASSWORD_MAX.'}$/'; // login
+	$password 	= '/^.{'.PASSWORD_MIN.','.PASSWORD_MAX.'}$/'; // password
 	$digit 		= "/^[0-9]+$/"; // numbers only
 	$alpha 		= "/^[a-z]+$/"; // lwr case letters only (roman chars)
 	$alphaall 	= "/^[a-z]+$/i"; // upr & lwr letters only (roman chars)

@@ -11,7 +11,7 @@
 class Access 
 {
 	var $settings		= array();
-	var $prefs			= array();
+	var $prefs		= array();
 	
 	/**
 	* User logout 
@@ -65,8 +65,8 @@ class Access
 		{
 			sleep(3); // obscure prevention of absuse
 			
-			$clean['userid'] 	= getPOST('uid', null, 'password', 12);
-			$clean['password'] 	= md5(getPOST('pwd', null, 'password', 12));
+			$clean['userid'] 	= getPOST('uid', null, 'userid', USERID_MAX);
+			$clean['password'] 	= md5(getPOST('pwd', null, 'password', PASSWORD_MAX));
 
 			$this->prefs = $OBJ->db->selectArray(PX.'users', $clean, 'record');
 				

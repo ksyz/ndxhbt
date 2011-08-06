@@ -42,7 +42,7 @@ installation procedures.
 7.  Remove write permissions from `ndxhbt/config/`, restore the original 
 SELinux context.
 
-    $ restorecon -R `ndxhbt/config/`
+        $ restorecon -R `ndxhbt/config/`
 
 8.  Log in with index1/exhibit and go to preferences and change your 
 password. Now.

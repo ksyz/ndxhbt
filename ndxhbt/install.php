@@ -248,11 +248,16 @@
 	function writeConfig()
 	{
 		global $c;
-		
+	
 		if (!is_array($c)) exit;
 		
 		$path = DIRNAME . BASENAME . '/config';
 		$filename = $path . '/config.php';
+		
+		if (file_exists($filename)) {
+			// dear hipster, you should remove install.php altogether
+			die("Already configured.");
+		}
 		
 		$somecontent = "<?php
 

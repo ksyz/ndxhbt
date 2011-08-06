@@ -54,4 +54,5 @@ For original readme.txt open ndxhbt/readme.txt. Copying under the terms
 of originaly attached GPLv2+ in ndxhbt/license.txt.
 
 (ɔ) 2011 by ksyz
+
 (c) 2008 by Daniel Eatock and Tatiret, c.o.

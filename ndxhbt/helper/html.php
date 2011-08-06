@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 
 // rudimentary functions for making html with less handling

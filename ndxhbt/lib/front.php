@@ -1,6 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
-
-
+<?php 
 /**
 * Frontend template class
 *
@@ -227,9 +225,8 @@ class Front
 		<plug:front_index />
 		<%obj_ibot%>
 		
-		<!-- you must provide a link to Indexhibit on your site someplace - thank you -->
 		<ul>
-		<li>Built with <a href='http://www.indexhibit.org/'>Indexhibit</a></li>
+		<li>Built with text editor, while using keyboard.</li>
 		</ul>
 
 		</div>	

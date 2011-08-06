@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 
 class System extends Router
@@ -378,10 +378,12 @@ class System extends Router
 	// upload files
 	function sbmt_upd_files()
 	{
-		$OBJ->template->errors = TRUE;
 		global $go, $uploads;
+		
+		$OBJ = get_instance();
+		$OBJ->template->errors = TRUE;
 
-		$IMG =& load_class('media', TRUE, 'lib');
+		$IMG = load_class('media', TRUE, 'lib');
 			
 		// +++++++++++++++++++++++++++++++++++++++++++++++++++
 		

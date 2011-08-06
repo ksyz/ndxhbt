@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 
 class Exhibits extends Router
@@ -1325,7 +1325,7 @@ class Exhibits extends Router
 	function sbmt_img_upload()
 	{
 		global $go, $uploads, $default;
-		
+		$OBJ = get_instance();	
 		$OBJ->template->errors = TRUE;
 		
 		load_module_helper('files', $go['a']);
@@ -1388,7 +1388,7 @@ class Exhibits extends Router
 				if (in_array($thetype, $uploads['images']))
 				{
 					// if uploaded we can work with it
-					if (move_uploaded_file($image['temp'], 
+					if (file_exists($image['temp']) && move_uploaded_file($image['temp'], 
 						$IMG->path . '/' . $IMG->filename)) 
 					{
 						$x++;

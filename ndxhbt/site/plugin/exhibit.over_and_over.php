@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 /**
 * Over and over
@@ -16,7 +16,7 @@ $exhibit['exhibit'] = createExhibit();
 
 function createExhibit()
 {
-	$OBJ =& get_instance();
+	$OBJ = get_instance();
 	global $rs;
 	
 	$pages = $OBJ->db->fetchArray("SELECT * 

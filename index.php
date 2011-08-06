@@ -31,7 +31,7 @@ $uri = str_replace($self, '', $uri);
 	
 // time to roll
 load_helpers(array('time'));
-$OBJ =& load_class('core', TRUE, 'lib');
+$OBJ = load_class('core', TRUE, 'lib');
 
 // page query
 $rs = $OBJ->db->fetchRecord("SELECT * 

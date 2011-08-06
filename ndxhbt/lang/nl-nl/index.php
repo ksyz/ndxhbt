@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('Er is geen directe toegang tot de scripts toegestaan!');
+<?php
 
 /**
 * Translation

@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 // mod_rewrite is being used?
 // in case the server does not have mod_rewrite

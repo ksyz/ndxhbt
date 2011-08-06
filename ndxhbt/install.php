@@ -254,7 +254,7 @@
 		$path = DIRNAME . BASENAME . '/config';
 		$filename = $path . '/config.php';
 		
-		$somecontent = "<?php  if (!defined('SITE')) exit('No direct script access allowed');
+		$somecontent = "<?php
 
 \$indx['db'] 		= '$c[n_name]';
 \$indx['user'] 		= '$c[n_user]';

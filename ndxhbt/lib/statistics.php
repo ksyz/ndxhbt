@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 
 /**
@@ -98,7 +98,7 @@ class Statistics
 	*/
 	function stat_getCountry($ip='')
 	{
-		$OBJ =& get_instance();
+		$OBJ = get_instance();
 	
 		if ($ip == '') return;
 	
@@ -218,7 +218,7 @@ class Statistics
 	*/
 	function stat_insertHit()
 	{
-		$OBJ =& get_instance();
+		$OBJ = get_instance();
 	
 		$stat = $this->stat_doStats();
 		

@@ -1,4 +1,4 @@
-<?php if (!defined('SITE')) exit('No direct script access allowed');
+<?php
 
 /**
 * Dexu column
@@ -17,7 +17,7 @@ $exhibit['exhibit'] = createExhibit();
 
 function createExhibit()
 {
-	$OBJ =& get_instance();
+	$OBJ = get_instance();
 	global $rs, $exhibit;
 	
 	$pages = $OBJ->db->fetchArray("SELECT * 

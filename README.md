@@ -30,8 +30,8 @@ mode (nobody wants to run webserver in permissive, right?). Now go and
 fix context type for those dirs. Use semanage(8) fcontext to make it 
 permanent across relabels. 
 
-    $ chcon -R -t httpd_sys_rw_content_t files/
-    $ chcon -R -t httpd_sys_rw_content_t ndxhbt/config/
+        $ chcon -R -t httpd_sys_rw_content_t files/
+        $ chcon -R -t httpd_sys_rw_content_t ndxhbt/config/
 
 4.  Prepare database login credentials. Open `ndxhbt/install.php` and 
 search for `$isam` variable. Set charset and collate to something 

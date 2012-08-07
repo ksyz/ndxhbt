@@ -52,7 +52,7 @@ class Statistics
 	*/
 	function stat_doStats()
 	{
-		$stat['ip']		 	= $_SERVER['REMOTE_ADDR'];
+		$stat['ip']		 	= $_SERVER[REMOTE_ADDR_HEADER];
 		$stat['lang']		= $this->stat_getLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 		$stat['ref']		= (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : '';
 		$stat['url']		= parse_url($stat['ref']);

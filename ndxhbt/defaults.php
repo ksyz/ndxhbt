@@ -65,6 +65,8 @@ $default['module'] = 'exhibits';
 
 // do we want to use the internal stats?
 $default['statistics'] = TRUE;
+// If we are behind proxy, remote address may be stored differently
+define('REMOTE_ADDR_HEADER', 'REMOTE_ADDR');
 
 // for paths to files/images
 define('BASEFILES', '/files');
